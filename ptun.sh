@@ -157,7 +157,7 @@ gen_secrets(){
 
 write_xconf(){
   mkdir -p "$BASE"
-  local tmp inb="" p; tmp=$(mktemp)
+  local tmp inb="" p; tmp=$(mktemp --suffix=.json)
   if [ "$ROLE" = foreign ]; then
     cat > "$tmp" <<EOF
 {
